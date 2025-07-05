@@ -141,6 +141,5 @@ Feel free to explore the source files or fork the repo for your own learning.
 
 This project is open-source and free to use under the [MIT License](LICENSE).
 
-```
 
 ---
