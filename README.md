@@ -1,5 +1,4 @@
 
-````markdown
 # 🌌 Celestial Bodies & ⚽ World Cup Databases
 
 This repository contains two complete PostgreSQL database projects developed as part of the [freeCodeCamp Relational Database Certification](https://www.freecodecamp.org/learn/relational-database/). Each project demonstrates database design, table relationships, data insertion, and SQL query writing.
