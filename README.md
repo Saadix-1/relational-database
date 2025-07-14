@@ -1,7 +1,10 @@
+# 🌌 Celestial Bodies, ⚽ World Cup & 🧪 Periodic Table Databases
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)](https://git-scm.com/)
 
-# 🌌 Celestial Bodies & ⚽ World Cup Databases
-
-This repository contains two complete PostgreSQL database projects developed as part of the [freeCodeCamp Relational Database Certification](https://www.freecodecamp.org/learn/relational-database/). Each project demonstrates database design, table relationships, data insertion, and SQL query writing.
+This repository contains **three complete PostgreSQL database projects** developed as part of the [freeCodeCamp Relational Database Certification](https://www.freecodecamp.org/learn/relational-database/).  
+Each project demonstrates database design, table relationships, Bash scripting, data insertion, and SQL querying.
 
 ---
 
@@ -110,14 +113,67 @@ diff output.txt expected_output.txt
 All outputs matched the expected file, including number formats.
 
 ---
+## 📸 Screenshots 
 
-## 🧠 Author
+<img width="327" alt="Screenshot 2025-07-06 at 00 10 46" src="https://github.com/user-attachments/assets/acb9e2c2-4dca-4f57-83dc-ff91509db9ab" />
 
-**By Saad Mehamdi**
+### 3. 🧪 Periodic Table Database & Bash Script
 
-These projects were built as part of my journey through the freeCodeCamp certification. They reflect practical SQL skills, including schema design, data normalization, and query optimization.
+A SQL + Bash project that models elements of the periodic table and allows lookup via a command-line interface.
 
-Feel free to explore the source files or fork the repo for your own learning.
+#### 🧰 Tasks Completed
+
+1. **Database Fixes & Enhancements**
+
+   * Renamed columns:
+
+     * `weight` → `atomic_mass`
+     * `melting_point` → `melting_point_celsius`
+     * `boiling_point` → `boiling_point_celsius`
+   * Set `NOT NULL` and `UNIQUE` constraints on `symbol`, `name`, and other columns
+   * Added foreign key relationships and created a `types` table
+   * Inserted new elements: Fluorine (9) and Neon (10)
+   * Deleted invalid element with atomic\_number 1000
+   * Cleaned `atomic_mass` decimals and capitalized all `symbol` values
+
+2. **Git & Repo Structure**
+
+   * Repository initialized with `git init`
+   * Five commits with messages formatted (`Initial commit`, `fix:`, `feat:`, etc.)
+   * Files:
+
+     * `element.sh`: Bash script to search elements
+     * `periodic_table.sql`: SQL dump of the final database
+
+3. **Bash Script Behavior**
+
+   * `./element.sh`: prompts user for argument if missing
+   * Input can be atomic number, symbol, or element name
+   * Returns element details (name, symbol, type, mass, melting/boiling points)
+   * Returns a friendly error if element not found
+
+#### 🔍 Sample Output
+
+```bash
+$ ./element.sh 1
+The element with atomic number 1 is Hydrogen (H). It's a nonmetal, with a mass of 1.008 amu. Hydrogen has a melting point of -259.1 celsius and a boiling point of -252.9 celsius.
+
+$ ./element.sh Xx
+I could not find that element in the database.
+```
+
+#### 🛠️ Useful Commands
+
+```bash
+# Connect to the database
+psql --username=freecodecamp --dbname=periodic_table
+
+# Export DB to SQL file
+pg_dump -cC --inserts -U freecodecamp periodic_table > periodic_table.sql
+
+# Re-import
+psql -U postgres < periodic_table.sql
+```
 
 ---
 
@@ -130,10 +186,19 @@ Feel free to explore the source files or fork the repo for your own learning.
 * Data export/import via CLI
 
 ---
-
 ## 📸 Screenshots 
+<img width="1420" height="294" alt="Screenshot 2025-07-14 at 10 47 35" src="https://github.com/user-attachments/assets/dbdf065d-7317-4f5d-9806-3f7c078258ce" />
 
-<img width="327" alt="Screenshot 2025-07-06 at 00 10 46" src="https://github.com/user-attachments/assets/acb9e2c2-4dca-4f57-83dc-ff91509db9ab" />
+---
+
+## 🧠 Author
+
+**By Saad Mehamdi**
+
+These projects were built as part of my journey through the freeCodeCamp certification. They demonstrate hands-on skills in database design, Bash scripting, and SQL querying.
+
+
+Feel free to explore the source files or fork the repo for your own learning.
 
 ---
 
