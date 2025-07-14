@@ -16,8 +16,6 @@ A structured PostgreSQL database representing celestial bodies such as galaxies,
 
 #### 🔧 Project Steps
 
-All commands are available in [`solution.txt`](./solution.txt):
-
 1. Created a PostgreSQL database named `universe`
 2. Designed tables: `galaxy`, `star`, `planet`, `moon`
 3. Inserted meaningful data for each body
